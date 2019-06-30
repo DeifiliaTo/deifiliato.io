@@ -1,0 +1,19 @@
+.jumbotron{
+ background-image: url('Images/homepage_background_cropped.png');
+ background-size: cover;
+ background-repeat: no-repeat;
+ text-align: center;
+}
+#title{
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 204, 0, 0.5);
+}
+#background-opacity{
+    background: rgb(255, 204, 0); /* Fallback for older browsers without RGBA-support */
+    background: rgba(255, 204, 0, 0.2);
+}
+
+.btn-info{
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}

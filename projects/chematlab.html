@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Deifilia To</title>
+<link rel="icon" type="image/png" href="../Images/dt_logo.png"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href = "project_list.css">
+<link rel="stylesheet" href = "../navbar.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3" >
+    <div class="container-fluid" id="navbar">
+        <a href="#" class="navbar-brand mr-3">Deifiila To</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="../index.html" class="nav-item nav-link active">Home</a>
+                <a href="../writing.html" class="nav-item nav-link">Writing</a>
+                <a href="../projects.html" class="nav-item nav-link">Projects</a>
+                <a href="../research.html" class="nav-item nav-link">Research</a>
+		        <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
+            </div>
+        </div>
+    </div>    
+    </nav>
+    <div class="jumbotron" <br>
+            <h1>Google Summer of Code: Haskell</h1>
+    </div>
+   
+    <div class="container-fluid">
+        <div class="row">
+                    <!-- Project 1: GSoC -->
+            <div class="col-sm-2" id="projectelement"></div>
+        <div class="col-sm-8">
+        <p id="intro">
+                Let’s face it, a lot of Chemical Engineering is based on empirical data. 
+                The behaviour of gases and particles and chemical reactions is simply too stochastic 
+                to create a new physical model for. I attempt to<b> reduce the amount of tedious work</b>
+                 required to solve problems by creating a network of MATLAB scripts and data files. 
+                 CheMATLAB is a personal project that seeks to make <b>getting through a chemical engineering degree just a little bit easier. </b>
+        </p>
+        </div>
+        <div class="col-sm-2" id="projectelement"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                    <img src="../Images/chem-1.png" id="content">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h3>Storage of thermodynamic data in structures</h3>
+                <p id="content"> 
+                    I attempted to make the information as easy to navigate as possible, by sorting the data into structures. 
+                    Each structure represents one compound, and the properties (i.e. heat capacity coefficients, enthalpy of vapourization, etc.) 
+                    are all stored within each compound. For easy access, the corresponding reverse structures also exist. 
+                    There is a Cp structure that stores the heat capacities of each compound. While this is redundant, 
+                    it allows for easy access.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+        <div class="col-sm-12">
+        <img src="../Images/structures.png" style="width:fit-content" id="content">
+        </div> </div>
+        <div class="row">
+            <div class="col-sm-12">
+        <img src="../Images/enthalpy.png" id="content">
+        </div>
+    </div>
+        
+       
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+            <h3>Scripts to solve basic processes</h3>
+            <p id="content">
+                I have created several scripts that run based on the structural data I have stored. 
+                These scripts are designed to calculate common values, such as “enthalpy of reaction” or 
+                “adiabatic reaction temperature” that are abundant in Chemical engineering.
+            </p>
+            </div>
+            <div class="col-sm-2"></div>
+
+        </div>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <h6>
+            <a href="GSoC.html" id="footer">
+                GSoC &middot;
+            </a>
+            <a href="chematlab.html" id="footer" class="target">
+                CheMATLAB &middot;
+            </a>
+            <a href="tableau.html" id="footer">
+                Tableau <br> <br>
+            </a>
+            <a href="Trashy.html" id="footer">
+                Trash-free NYC &middot;
+            </a>
+            <a href="bike.html" id="footer">
+                Bikes in NYC &middot;
+            </a>
+            <a href="reckoner.html" id="footer">
+                Reckoner &middot;
+            </a>
+            <a href="ukind.html" id="footer">
+                Undercover kindness
+            </a>
+        </h6>
+    </div>
+</body>
+</html>                            

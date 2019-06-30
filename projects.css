@@ -1,0 +1,21 @@
+#projects{
+    background-color: white;
+    text-align: center;
+    border-style:solid;
+    border-color:black;
+}
+
+#projectheader{
+    background-image: url('Images/hamburg_boat.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+#background-opacity{
+    background: rgb(240, 234, 214); /* Fallback for older browsers without RGBA-support */
+    background: rgba(240, 234, 214, 0.8);
+}
+#projectelement{
+    border-color: white;
+    border-style:solid;
+}
