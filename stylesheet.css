@@ -7,6 +7,8 @@
 #title{
     text-decoration: underline;
     text-decoration-color: rgba(255, 204, 0, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #background-opacity{
     background: rgb(255, 204, 0); /* Fallback for older browsers without RGBA-support */
