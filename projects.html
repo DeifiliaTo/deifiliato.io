@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Deifilia To</title>
+    <title>Projects & Coding</title>
     <link rel="icon" type="image/png" href="Images/dt_logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -17,22 +18,17 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand mr-3">Deifiila To</a>
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="writing.html" class="nav-item nav-link">Writing</a>
                     <a href="projects.html" class="nav-item nav-link">Projects</a>
                     <a href="research.html" class="nav-item nav-link">Research</a>
                     <a href="pictures.html" class="nav-item nav-link">Pictures</a>
                 </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link">Register</a>
-                    <a href="#" class="nav-item nav-link">Login</a>
-                </div>
+
             </div>
         </div>
     </nav>
@@ -41,24 +37,28 @@
             <font color="black" id="background-opacity">Projects & Coding</font>
         </h1>
         <p class="lead" id="background-opacity">
-            <font color="black"><b>I’m a 3rd year Chemical Engineering student, born and raised in Canada. I love
-                    coding, writing, <br>and hiking to beautiful places. Click below to see it all.</b></font>
+            <font color="black"><b>Through hackathons, extra-curricular activities, and just generally having life
+                    interests, I've accumulated some personal projects over the past few years.<br>
+                    Highlights include a newspaper, a kindness club, and lots of makeshift hackathon projects.
+            </font>
         </p>
     </div>
     <div class="container-fluid" id="projects">
         <div class="row jumbotron">
             <!-- Project 1: GSoC -->
-            <div class="col-sm-6" id="projectelement">
-                <a href="projects/gsoc.html">
-                    <h2>GSoC</h2>
-                    <img src="Images/haskell_logo.svg" style="width:80%">
+            <div class="col-sm-6 container" id="projectelement">
+                <a href="projects/gsoc.html" class="text-secondary" id="projectTitle">
+                    <img src="Images/Projects/GSoC/Haskell-Code.png" style="width:80% height: 80%">
+                    <div class="overlay">
+                        <p class="text" style="font-size-adjust: inherit"> Google Summer of Code: Haskell.org</p>
+                    </div>
                 </a>
             </div>
             <!-- Project 2: CheMatlab -->
             <div class="col-sm-6" id="projectelement">
-                <a href="projects/chematlab.html">
+                <a href="projects/chematlab.html" class="text-secondary">
                     <h1> Chematlab </h1>
-                    <img src="Images/Benzene_2.PNG" style="width:80%">
+                    <img src="Images/Benzene_2.PNG" style="width:80% ">
                 </a>
             </div>
         </div>
@@ -66,34 +66,34 @@
             <!-- Project 3: Home-ing in on Canadian real estate -->
             <div class="col-sm-12" id="projectelement">
                 <a href="projects/tableau.html">
-                <h1> tableau </h1>
-                <img src="Images/Reckoner (1).jpg" style="width:80%">
-            </a>
+                    <h1> tableau </h1>
+                    <img src="Images/Plot.png" style="width:80%">
+                </a>
             </div>
         </div>
         <div class="row jumbotron">
             <!-- Project 4: Trash-free NYC -->
             <div class="col-sm-6" id="projectelement">
                 <a href="projects/trashy.html">
-                trashy
-                <img src="Images/New_York.PNG" style="width:80%">
-            </a>
+                    trashy
+                    <img src="Images/New_York.PNG" style="width:80%">
+                </a>
             </div>
             <!-- Project 5: Visualizing bike patterns in NYC -->
             <div class="col-sm-6" id="projectelement">
                 <a href="projects/bike.html">
-                Bikes
-                <img src="Images/New_York.PNG" style="width:80%">
-            </a>
+                    Bikes
+                    <img src="Images/New_York.PNG" style="width:80%">
+                </a>
             </div>
         </div>
         <div class="row jumbotron">
             <!-- Project 6: Reckoner -->
             <div class="col-sm-12" id="projectelement">
                 <a href="Projects/reckoner.html">
-                Reckoner
-                <img src="Images/Reckoner (1).jpg" style="width:80%">
-            </a>
+                    Reckoner
+                    <img src="Images/Reckoner (1).jpg" style="width:80%">
+                </a>
             </div>
         </div>
         <div class="row jumbotron">
@@ -104,6 +104,29 @@
                     <img src="Images/SPE.jpg" style="width:80%">
                 </a>
             </div>
+            <div class="col-sm-6" id="projectelement">
+                <article class="index-item has-item-image" data-item-id="5bc7e8160d9297442556f974"
+                    data-url-id="physics-hack" style="background-color: #222222">
+                    <a class="index-item-link intrinsic" href="projects/chematlab.html">
+
+                        <figure class="index-item-image-wrapper js-index-item-image-wrapper"><img
+                                class="index-item-image js-index-item-image loading" data-src="images/Benzene_2.png"
+                                data-image="images/Benzene_2.png" data-image-dimensions="1362x798"
+                                data-image-focal-point="0.5,0.5" alt="chem" data-load="false" /></figure>
+
+                    </a>
+                    <div class="index-item-text-wrapper ">
+                        <h2 class="index-item-title">
+                            <a class="index-item-title-link" href="projects/chematlab.html"><span
+                                    class="index-item-title-text">CheMATLAB</span></a>
+                        </h2>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="index-section-physics-hack" class="index-section index-page-transition-link">
+
         </div>
 
 

@@ -9,35 +9,36 @@
     <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project_list.css">
     <link rel="stylesheet" href="../navbar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"
+        type="text/javascript"></script>
 </head>
 
 <body>
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container-fluid" id="navbar">
-            <a href="../index.html" class="navbar-brand mr-3">Deifiila To</a>
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="../index.html" class="nav-item nav-link active">Home</a>
-                    <a href="../writing.html" class="nav-item nav-link">Writing</a>
                     <a href="../projects.html" class="nav-item nav-link">Projects</a>
                     <a href="../research.html" class="nav-item nav-link">Research</a>
                     <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
                 </div>
+
             </div>
         </div>
     </nav>
     <!--Title -->
-    <div class="jumbotron" <br>
+    <div class="jumbotron">
         <h1>Google Summer of Code: <br> Chebyshev approximations in Haskell</h1>
     </div>
 
@@ -47,44 +48,55 @@
             <div class="col-sm-2" id="projectelement"></div>
             <div class="col-sm-8">
                 <p id="content">
-                    In science, engineering and statistics, the field of computational sciences is continuously being developed upon and improved. One of the major barriers for the development of this field is the sheer amount of computational effort or time it takes to perform numerical calculations on potentially massive systems. 
+                    In science, engineering and statistics, the field of computational sciences is continuously being
+                    developed upon and improved. One of the major barriers for the development of this field is the
+                    sheer amount of computational effort or time it takes to perform numerical calculations on
+                    potentially massive systems.
                 </p>
                 <p id="content">
-                    One method to drastically improve computational time is to approximate complex mathematical functions with polynomials. Once we represent any continuous function with a polynomial, we can perform computations such as differentiation, or integration become negligible, and functions such as root finding also become greatly simplified.
+                    One method to drastically improve computational time is to approximate complex mathematical
+                    functions with polynomials. Once we represent any continuous function with a polynomial, we can
+                    perform computations such as differentiation, or integration become negligible, and functions such
+                    as root finding also become greatly simplified.
                 </p>
                 <p id="content">
-                    Furthermore, polynomials can be easily represented with a vector of coefficients. For example, the vector [1.0, 0.0, 3.0] will represent 
-                    <span class="math inline">\(1 + x^{2}\)</span>. 
+                    Furthermore, polynomials can be easily represented with a vector of coefficients. For example, the
+                    vector [1.0, 0.0, 3.0] will represent
+                    <span class="math inline">\(1 + x^{2}\)</span>.
                 </p>
                 <h3 id="header">
                     The Chebyshev approximation
                 </h3>
-                <p>
-                    This approximation can be computed with Chebyshev polynomials. While there are several types of Chebyshev polynomials, the first type are implemented in this project.
-Chebyshev polynomials of degree n are recursively defined as: <br>
-<span class="math inline">\(T_{n}\left( x \right) = 2xT_{n - 1}\left( x \right) - T_{n - 2}(x)\)</span>, 
-with base cases  
-<span class="math inline">\(T_{1}\left( x \right) = x\)</span> and <span class="math inline">\(T_{0}\left( x \right)\)</span> = 1. 
-<br><br> They are valid on the range of <span class="math inline">\(x\  \in \left\lbrack - 1,1 \right\rbrack.\)</span>
-<br> The final, Chebyshev series expansion is equal to:
-    <tr class="odd">
-    <td><span class="math display">\[f\left( x \right) \cong \ \sum_{i = 0}^{\infty}{c_{i}T_{i}(x)}\]</span></td>
-    
-    </tr>
+                <p id="content">
+                    This approximation can be computed with Chebyshev polynomials. While there are several types of
+                    Chebyshev polynomials, the first type are implemented in this project.
+                    Chebyshev polynomials of degree n are recursively defined as: <br>
+                    <p><span class="math inline">\(T_{n}\left( x \right) = 2xT_{n - 1}\left( x \right) - T_{n -
+                            2}(x)\)</span>,
+                        with base cases
+                        <span class="math inline">\(T_{1}\left( x \right) = x\)</span> and <span
+                            class="math inline">\(T_{0}\left( x \right)\)</span> = 1. </p>
+                    <p id="content">
+                        <br><br> They are valid on the range of <span class="math inline">\(x\ \in \left\lbrack - 1,1
+                            \right\rbrack.\)</span>
+                        <br> The final, Chebyshev series expansion is equal to:
+                        <tr class="odd">
+                            <td><span class="math display">\[f\left( x \right) \cong \ \sum_{i =
+                                    0}^{\infty}{c_{i}T_{i}(x)}\]</span></td>
 
+                        </tr>
+                        Where ci is specific to the function being approximated.
+                    </p>
+                    <h3 id="header">
+                        Approximating <span class="math inline">\(f\left( x \right) = \cos{(\sin{x) + e^{x}}}\)</span>
+                    </h3>
+                    <p id="content">
+                        For example, the function <span class="math inline">\(f\left( x \right) = \cos{(\sin{x) +
+                            e^{x}}}\)</span>, can be approximated by a nth order polynomial.
+                        We can see that we get a fairly good approximation of f(x) with a Chebyshev approximation of
+                        degree 5 on a range of [-1, 1].
 
-
-Where ci is specific to the function being approximated.
-
-                </p>
-                <h3 id="header">
-                    Approximating  <span class="math inline">\(f\left( x \right) = \cos{(\sin{x) + e^{x}}}\)</span>
-                </h3>
-                <p>
-                    For example, the function  <span class="math inline">\(f\left( x \right) = \cos{(\sin{x) + e^{x}}}\)</span>, can be approximated by a nth order polynomial. 
-We can see that we get a fairly good approximation of f(x) with a Chebyshev approximation of degree 5 on a range of [-1, 1]. 
-
-                </p>
+                    </p>
             </div>
             <div class="col-sm-2" id="projectelement"></div>
         </div>
@@ -98,8 +110,11 @@ We can see that we get a fairly good approximation of f(x) with a Chebyshev appr
             <div class="col-sm-8">
                 <h3 id="header">Increasing the degree of the Chebyshev Polynomial</h3>
                 <p id="content">
-                    However, the goal of this library is to approximation functions to machine-level floating point precision, so that we can further manipulate the functions without having to worry too much about propagating error.
-                    This graph shows the residual between the approximation and f(x), within the range of [-1, 1] for a Chebyshev Approximation of degree 5. We can see that our error is 
+                    However, the goal of this library is to approximation functions to machine-level floating point
+                    precision, so that we can further manipulate the functions without having to worry too much about
+                    propagating error.
+                    This graph shows the residual between the approximation and f(x), within the range of [-1, 1] for a
+                    Chebyshev Approximation of degree 5. We can see that our error is
                     on the order of <span class="math inline">\(10^{- 3}\)</span>.
                 </p>
             </div>
@@ -110,18 +125,21 @@ We can see that we get a fairly good approximation of f(x) with a Chebyshev appr
                 <img src="../Images/Projects/GSoC/ResN=5.png" style="width:fit-content" id="content">
             </div>
         </div>
-       
+
 
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <h3 id="header">Primary usage</h3>
                 <p id="content">
-                    When we perform an approximation of degree 15, we can see that our results are much closer to the desired function. 
+                    When we perform an approximation of degree 15, we can see that our results are much closer to the
+                    desired function.
                 </p>
                 <p id="content">
-                    This plot shows f and the approximation of the 15th order, over a domain of 1⋅10^(-9). Here, the error is on the order of <span class="math inline">\(10^{- 10}\)</span>. 
-                    Eventually, if we compute a high-enough-order Chebyshev polynomial, we can sufficiently approximate any continuous function over a specified domain.
+                    This plot shows f and the approximation of the 15th order, over a domain of 1⋅10^(-9). Here, the
+                    error is on the order of <span class="math inline">\(10^{- 10}\)</span>.
+                    Eventually, if we compute a high-enough-order Chebyshev polynomial, we can sufficiently approximate
+                    any continuous function over a specified domain.
                 </p>
             </div>
             <div class="col-sm-2"></div>
@@ -136,10 +154,14 @@ We can see that we get a fairly good approximation of f(x) with a Chebyshev appr
             <div class="col-sm-8">
                 <h3 id="header">What's next?</h3>
                 <p id="content">
-                    The aim of this project is to develop a module of overloaded functions so that any function can be approximated to machine-level precision. The accelerate library, an embedded language that is conducive to quick matrix manipulations, will be used to increase the speed of the computations.
+                    The aim of this project is to develop a module of overloaded functions so that any function can be
+                    approximated to machine-level precision. The accelerate library, an embedded language that is
+                    conducive to quick matrix manipulations, will be used to increase the speed of the computations.
                 </p>
                 <p id="content">
-                    I am currently working on functions to automate the process of extending the Chebyshev polynomials, and define a robust Cheb type that can handle common arithmetic operations within the world of Chebyshev approximations.
+                    I am currently working on functions to automate the process of extending the Chebyshev polynomials,
+                    and define a robust Cheb type that can handle common arithmetic operations within the world of
+                    Chebyshev approximations.
                 </p>
             </div>
             <div class="col-sm-2"></div>
@@ -150,7 +172,7 @@ We can see that we get a fairly good approximation of f(x) with a Chebyshev appr
     <!-- Footer -->
     <div class="container-fluid">
         <h6>
-            <a href="GSoC.html" id="footer" class="target">
+            <a href="gsoc.html" id="footer" class="target">
                 GSoC &middot;
             </a>
             <a href="chematlab.html" id="footer">

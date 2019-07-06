@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project_list.css">
     <link rel="stylesheet" href="../navbar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,26 +19,25 @@
 
 <body>
     <!--Navigation bar-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container-fluid" id="navbar">
-            <a href="../index.html" class="navbar-brand mr-3">Deifiila To</a>
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="../index.html" class="nav-item nav-link active">Home</a>
-                    <a href="../writing.html" class="nav-item nav-link">Writing</a>
                     <a href="../projects.html" class="nav-item nav-link">Projects</a>
                     <a href="../research.html" class="nav-item nav-link">Research</a>
                     <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
                 </div>
+
             </div>
         </div>
     </nav>
     <!--Title -->
-    <div class="jumbotron" <br>
-        <h1>Google Summer of Code: Haskell</h1>
+    <div class="jumbotron">
+        <h1>Visualizing biking patterns in NYC</h1>
     </div>
 
     <div class="container-fluid">
@@ -46,29 +46,32 @@
             <div class="col-sm-2" id="projectelement"></div>
             <div class="col-sm-8">
                 <p id="intro">
-                    intro text
+                    As part of CodeJam: DataDive 2018, we parsed through New York City’s open source bike-sharing data. 
+                    We organized the information by time of day, week, and season, to visualize the patterns of bikers in the City of Dreams. 
+                    Link to project <a href="https://www.cs.mcgill.ca/~jluo24/nybikes.html">here.</a>
                 </p>
             </div>
             <div class="col-sm-2" id="projectelement"></div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <img src="../Images/chem-1.png" id="content">
+                <img src="../Images/Projects/NYC/NYC-map.png" id="content">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h3>Title</h3>
+                <h3>Map of NYC</h3>
                 <p id="content">
-                    Modify as required
+                    By plotting the localization of pedestrian and traffic accidents in the city, we visualized the network of roads and bridges. 
+                    We used this as the basis for our map.
                 </p>
             </div>
             <div class="col-sm-2"></div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <img src="../Images/structures.png" style="width:fit-content" id="content">
+                <img src="../Images/Projects/NYC/map-data.png" style="width:fit-content" id="content">
             </div>
         </div>
        
@@ -76,9 +79,11 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h3>More description</h3>
+                <h3>Parsing through the data</h3>
                 <p id="content">
-                    More descriptions
+                    Our projects allows you to visualize the trends between bike usage and different times. 
+                    This is an example of our representation of bike users in the morning on a weekend. 
+                    Click the link above for a live demonstration.
                 </p>
             </div>
             <div class="col-sm-2"></div>
@@ -90,7 +95,7 @@
     <!-- Footer -->
     <div class="container-fluid">
         <h6>
-            <a href="GSoC.html" id="footer" class="target">
+            <a href="gsoc.html" id="footer">
                 GSoC &middot;
             </a>
             <a href="chematlab.html" id="footer">
@@ -102,7 +107,7 @@
             <a href="Trashy.html" id="footer">
                 Trash-free NYC &middot;
             </a>
-            <a href="bike.html" id="footer">
+            <a href="bike.html" id="footer" class="target">
                 Bikes in NYC &middot;
             </a>
             <a href="reckoner.html" id="footer">

@@ -3,7 +3,7 @@
     background-color:rgba(255, 204, 0, 0.0);
     text-decoration: underline;
     text-decoration-color: rgba(255, 204, 0, 0.5);
-    
+    font-family: 'Roboto';
     
 }
 
@@ -13,14 +13,18 @@
 #intro{
     text-align:center;
     width: 100%;
+    font-size: 110%;
+    padding-bottom: 20px;
+    font-family: 'Roboto';
+
 }
 #content{
     text-align: justify;
     max-width: 100%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 100%;
+    font-family: 'Roboto';
+    font-size: 110%;
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
 }
 #header{
     padding-top: 20px;

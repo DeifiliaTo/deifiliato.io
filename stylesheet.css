@@ -3,19 +3,30 @@
  background-size: cover;
  background-repeat: no-repeat;
  text-align: center;
+ min-height: 400px;
 }
 #title{
     text-decoration: underline;
     text-decoration-color: rgba(255, 204, 0, 0.5);
     padding-top: 10px;
     padding-bottom: 10px;
+    font-family: 'Roboto';
 }
 #background-opacity{
     background: rgb(255, 204, 0); /* Fallback for older browsers without RGBA-support */
     background: rgba(255, 204, 0, 0.2);
+    font-family: 'Roboto';
 }
 
 .btn-info{
-    background-color: #ffcc00;
-    border-color: #ffcc00;
+    background-color: #f1db81ea;
+    border-color: #f1db81ea;
+}
+.row{
+    height: 400px;
+    text-align: justify
+}
+body{
+    font-family: 'Roboto', sans-serif;
+
 }

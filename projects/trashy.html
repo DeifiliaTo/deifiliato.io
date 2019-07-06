@@ -5,12 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Include all necessary css files and link bootstrap-->
-    <title>Deifilia To</title>
+    <title>Trash-free NYC</title>
     <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="project_list.css">
     <link rel="stylesheet" href="../navbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -19,25 +21,24 @@
 <body>
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container-fluid" id="navbar">
-            <a href="../index.html" class="navbar-brand mr-3">Deifiila To</a>
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="../index.html" class="nav-item nav-link active">Home</a>
-                    <a href="../writing.html" class="nav-item nav-link">Writing</a>
                     <a href="../projects.html" class="nav-item nav-link">Projects</a>
                     <a href="../research.html" class="nav-item nav-link">Research</a>
                     <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
                 </div>
+
             </div>
         </div>
     </nav>
     <!--Title -->
-    <div class="jumbotron" <br>
-        <h1>Google Summer of Code: Haskell</h1>
+    <div class="jumbotron">
+        <h1>Trash-free NYC</h1>
     </div>
 
     <div class="container-fluid">
@@ -46,43 +47,48 @@
             <div class="col-sm-2" id="projectelement"></div>
             <div class="col-sm-8">
                 <p id="intro">
-                    intro text
+                    At ConuHacks IV, Minnie, Julia, Zoé and I built a web app that is designed to reduce waste in the
+                    city.
+                </p>
+                <p style="font-size: 130%">
+                    Link to project <a href="https://www.cs.mcgill.ca/~mnguye88/Trash-free/map.html">here.</a>
+                </p>
+                <p id="content">
+                    We're selfish millennials. We don't like to pay for washrooms, search for electronic drop-offs, 
+                    or hold my trash and recycling for a long time. But, we also care about making the world a better place. 
+                    That means no littering or throwing toxic batteries into regular trash bins. 
+                    This web app helps you organize your life and be a better person, all while being convenient and easy to use
                 </p>
             </div>
             <div class="col-sm-2" id="projectelement"></div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <img src="../Images/chem-1.png" id="content">
+                <img src="../Images/Projects/Trashy/Trashy.png" id="content">
             </div>
         </div>
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h3>Title</h3>
                 <p id="content">
-                    Modify as required
+                    Here's our solution: a map that grabs your location data, and returns to you the nearest public washrooms and waste disposal bins. 
+                    And it tells you the best walking route to get there. 
+                    Never find yourself a desperate tourist in NYC without a washroom again!
+                </p>
+                <p id="content">
+                    We built the website with HTML and JavaScript, using the papa parse library to read the CSV data. 
+                    The map display and distance tracking were implemented with the Google Maps API.
+                </p>
+                <p id="content">
+                    Dealing with asynchronous functions in JavaScript was a time and a half. We needed to explore setTimeout, 
+                    callback functions, and promises in order to get our code to run in the order that we wanted. 
+                    Although we eventually succeeded, the parsing of the CSV file takes longer than we'd like, and if a 
+                    user tries to get data points before the parsing is done, the markers will not appear. 
+                    Also, since were not located in New York City, we could not use the GPS localization functionality 
+                    from the Google Maps API, so we generated random coordinated within New York City.
                 </p>
             </div>
             <div class="col-sm-2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <img src="../Images/structures.png" style="width:fit-content" id="content">
-            </div>
-        </div>
-       
-
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <h3>More description</h3>
-                <p id="content">
-                    More descriptions
-                </p>
-            </div>
-            <div class="col-sm-2"></div>
-
         </div>
     </div>
     </div>
