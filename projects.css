@@ -45,11 +45,13 @@
     transition: .5s ease;
     background-color: grey;
   }
-  .container {
+  .container-new {
     position: relative;
     width: 100%;
+    overflow: hidden;
+    
   }
-  .container:hover .overlay {
+  .container-new:hover .overlay {
     opacity: 1;
   }
   .text {
@@ -63,4 +65,11 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+
+  .img{
+    top: 50%;
+    left: 50%;
+    transform: translate(0, +25%);
+    
   }

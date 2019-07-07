@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Include all necessary css files and link bootstrap-->
+    <title>CPE</title>
+    <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../projects/project_list.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="../projects.html" class="nav-item nav-link">Projects</a>
+                    <a href="../research.html" class="nav-item nav-link">Research</a>
+                    <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!--Title -->
+    <div class="jumbotron">
+        <h1>Catalytic Process Engineering: <br> Computational Fluid Dynamics</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Introduction to project-->
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-8">
+                <p id="intro">
+                    In the last school year, I worked on a research project in the Catalytic Process Engineering lab (Dept. of Chemical Engineering) at McGill University. 
+                    My project is to investigate the effects of different mesh generations on the computation of heat flow dynamics within a closed system. I am currently learning how to use OpenFOAM to develop the computational fluid dynamics simulations.
+                </p>
+            </div>
+            <div class="col-sm-2" id="projectelement"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                    I started by learning how to build geometries (and their respective boundaries) in Salome. 
+                    Next, the geometry needed to be discretized into a mesh, and loaded into OpenFOAM.
+                </p>
+                <p id="content">
+                    I then chose an appropriate solver (chtMultiRegionFoam) and specified the initial and boundary conditions for the system.
+                    The final simulation could resolve the hydrodynamics and temperature distribution of the reacting system.
+                </p>
+                <p id="content">
+                        The primary outcome of this goal was in discovering, from building the geometry to postprocessing, the workflow of building a simulation. Complex, multi-region geometries and meshes
+                        were built in Salome, and properly imported into OpenFOAM. ChtMultiRegionSimpleFoam was
+                        used to simulate both momentum and mass transfer within OpenFOAM. The momentum was
+                        balanced within 1% error, and shown to match theoretical results very well. The simulation could
+                        also properly couple heat transfer between solid/fluid regions. Lastly, energy was balanced within
+                        10%.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid">
+        <h6>
+            <a href="cpe.html" id="footer" class="target">
+                CPE &middot;
+            </a>
+            <a href="spe.html" id="footer">
+                SPE &middot;
+            </a>
+            <a href="bio.html" id="footer">
+                Bio <br> <br>
+            </a>
+        </h6>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Include all necessary css files and link bootstrap-->
+    <title>CPE</title>
+    <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../projects/project_list.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="../projects.html" class="nav-item nav-link">Projects</a>
+                    <a href="../research.html" class="nav-item nav-link">Research</a>
+                    <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!--Title -->
+    <div class="jumbotron">
+        <h1>Drying Kinetics of Cohesive Powders <br>
+            in a Vibrated Fluidized Bed</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Introduction to project-->
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-8">
+                <p id="intro">
+                    The overarching theme of the project was to find the drying kinetics of cohesive milk powder
+                    in a vibrated fluidized bed. I wanted to investigate the optimal frequency and air temperature
+                    required in the fluidized bed to design the most efficient fluidized bed.
+                    I also created a humidifying unit in Dyssol, a flow-sheet simulation.
+                    This can be used to model the effects of different inlet parameters on the drying process.
+                </p>
+            </div>
+            <div class="col-sm-2" id="projectelement"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="../Images/Research/SPE/model.png" style="width:fit-content" id="content">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                        This diagram depicts an overview of the system I was attempting to simulate. 
+                        The humidifier essentially performed three functions — it brought the ambient air up to 
+                        approximately forty degrees, then humidified the air (thus having the temperature drop) 
+                        before heating it again to a final desired temperature.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="../Images/Research/SPE/results.png" style="width:fit-content" id="content">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                    My goal was to be able to estimate the parameters to describe the rate that the heater was heating at. 
+                    Since it wasn’t advantageous to invest time studying the heater itself, the results are largely based on experimental data.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid">
+        <h6>
+            <a href="cpe.html" id="footer">
+                CPE &middot;
+            </a>
+            <a href="spe.html" id="footer" class="target">
+                SPE &middot;
+            </a>
+            <a href="bio.html" id="footer">
+                Bio <br> <br>
+            </a>
+        </h6>
+    </div>
+</body>
+
+</html>
