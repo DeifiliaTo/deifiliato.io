@@ -40,3 +40,8 @@
     font-weight: bold;
    
 }
+
+#code{
+    font-family: monospace;
+    text-align: left;
+}
