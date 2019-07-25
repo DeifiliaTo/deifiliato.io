@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Include all necessary css files and link bootstrap-->
+    <title>Deifilia To</title>
+    <link rel="icon" type="image/png" href="../Images/dt_logo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project_list.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand mr-3">Deifilia To</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="../projects.html" class="nav-item nav-link">Projects</a>
+                    <a href="../research.html" class="nav-item nav-link">Research</a>
+                    <a href="../pictures.html" class="nav-item nav-link">Pictures</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!--Title -->
+    <div class="jumbotron">
+        <h1>Google Summer of Code: <br> Chebyshev approximations in Haskell</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Introduction to project-->
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                    Chebyshev approximations are a way of representing any bound, continuous function, with a
+                    polynomial.
+                    Having a polynomial representation means that further function manipulations, such as derivation,
+                    integration,
+                    and root-finding, becomes relatively trivial computations.
+                </p>
+                <p id="content">
+                    The first step for this project, as a proof of concept, was to write it in vanilla haskell,
+                    using lists as the primary representation of Chebyshev Polynomials.
+                </p>
+                <p id="content">
+                    One of the Haskell libraries that have been developed is Accelerate,
+                    a nested language that allows for parallel array computations on computers with more than one core.
+                </p>
+                <p id="content">
+                    Since the Chebyshev polynomials in this project are, in fact, represented by arrays or lists of
+                    coefficients,
+                    I wanted to make full use of the parallel computing capabilities of the language.
+                    I spent the past few weeks converting my code to the Accelerate language.
+                </p>
+                <p id="content">
+                    The primary function of accelerate is to automatically generate optimized code.
+                    There are two primary types of values in Accelerate: Scalars and Arrays.
+                </p>
+                <p id="content">
+                    Using accelerate required a different way of thinking. I had to write functions that allow
+                    everything to be computed all at once. As an example,
+                    The chebyshev approximation is, by definition, <span class="math inline">\(f\left( x \right) \cong \
+                        \sum_{i = 0}^{\infty}{c_{i}T_{i}(x)}\ \)</span>.
+                </p>
+                <h3 id="header">
+                    The list approach
+                </h3>
+                <p id="content">
+                    I could simply generate the list of coefficients, generate the list of polynomials (as a list of
+                    lists), and map the coefficient with the respective polynomial. The last step is simply to sum up
+                    all the polynomials.
+                </p>
+            </div>
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-3" id="projectelement"></div>
+            <div class="col-sm-6">
+                <p id="code">
+                    chebf f n = <br>
+                    &nbsp;&nbsp;let coeffs &nbsp; = chebCoeff f n n <br>
+                    &nbsp; &nbsp; &nbsp; chebPols = chebPol n <br>
+                    &nbsp; &nbsp; &nbsp; zipped &nbsp; = zip coeffs chebPols <br>
+                    &nbsp; &nbsp; &nbsp; mapped &nbsp; = map (\(x, y) -> map (*x) y) zipped <br>
+                    in foldl (\x y -> sumVectors x y) [] mapped <br>
+                </p>
+            </div>
+            <div class="col-sm-3" id="projectelement"></div>
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                    For example, if I had <span class="math inline">\(c_{i} = \left\lbrack 1,\ 2,\ 3
+                        \right\rbrack,\)</span>
+                    , the first step would be to zip the coefficients with the polynomials. That is,
+                    <span class="math display">\[zipped = \lbrack\left( 1,\ \left\lbrack 1,\ 1 \right\rbrack \right),\
+                        \left( 2,\ \left\lbrack 2,\ 0,\ 3 \right\rbrack \right),\ \left( 3,\ \left\lbrack 5,\ 3,\ 4,\ 1
+                        \right\rbrack \right)\rbrack\]</span>
+                    Next, the coefficient will be multiplied through to the respective polynomial.
+                    <span class="math display">\[mapped = \lbrack\left\lbrack 1,\ 1 \right\rbrack,\ \left\lbrack 4,\ 0,\
+                        6 \right\rbrack,\ \left\lbrack 15,\ 9,\ 12,\ 3 \right\rbrack\rbrack\]</span>
+                    Finally, all the polynomials need to be summed up.
+                </p>
+                <p id="content">
+                    In the polynomial representation,
+                    <span class="math display">\[\left\lbrack 1,\ 1 \right\rbrack + \left\lbrack 4,\ 0,\ 6 \right\rbrack
+                        + \left\lbrack 15,\ 9,\ 12,\ 3 \right\rbrack = \lbrack 20,\ 10,\ 18,\ 3\rbrack\]</span>
+                    Note that each list is allowed to be a different length. In Accelerate, it is much more simple to
+                    pre-allocate arrays.
+                    Oftentimes matrices need to be padded with zeros to allow for uniform list lengths.
+                </p>
+                <h3 id="header">
+                    Accelerate Approach
+                </h3>
+                <p id="content">
+                    Since arrays in Accelerate need to be pre-allocated, we need a very different parallel approach.
+                </p>
+            </div>
+            <div class="col-sm-2" id="projectelement"></div>
+            <div class="col-sm-3" id="projectelement"></div>
+            <div class="col-sm-6">
+                <p id="code" style="color: green">
+                    {- Given a function f, and degree n, calculates chebyshev approximation.
+                    Get list of coeffs and chebyshev polynomials. Want to zip each coeff w/ respective polynomial and
+                    multiply.
+                    Finally, fold over all polynomials. -}
+                </p>
+                <p id="code">
+                    chebf :: (Exp Double -&gt; Exp Double) -&gt; Int -&gt; Acc (Vector Double) <br>
+                    chebf f n = <br>
+                    &nbsp; &nbsp; let n' &nbsp; = constant n <br>
+                    &nbsp; &nbsp; chebPols = genChebMatrix n <br>
+                    &nbsp; &nbsp; coeffs &nbsp; = chebCoeff' f n' <br>
+                    &nbsp; &nbsp; coeffsM &nbsp; = A.replicate (lift (Z :. All :. (n'+1))) coeffs<br>
+                    in<br>
+                    A.sum $ A.transpose $ A.zipWith (*) coeffsM (use chebPols)
+                </p>
+            </div>
+            <div class="col-sm-3" id="projectelement"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <p id="content">
+                    Here, we need still to generate two matrices – one for the coefficients, and one for the
+                    polynomials. However, they need to be the same size in order for us to properly map the correct
+                    coefficient to the polynomial.
+                    In this approach, I generate a matrix of polynomials, padded with zeroes where appropriate to fill
+                    it to the appropriate size. If we take the previous example, where the polynomials were
+                    <span class="math inline">\(\lbrack\left\lbrack 1,\ 1 \right\rbrack,\ \left\lbrack 2,\ 0,\ 3
+                        \right\rbrack,\ \left\lbrack 5,\ 3,\ 4,\ 1 \right\rbrack\rbrack\)</span>,
+                    we end up with this matrix:
+                </p>
+                <p><span class="math display">\[\begin{bmatrix}
+                        1 &amp; 1 &amp; 0 &amp; 0 \\
+                        2 &amp; 0 &amp; 3 &amp; 0 \\
+                        5 &amp; 3 &amp; 4 &amp; 1 \\
+                        \end{bmatrix}\]</span>
+                </p>
+                <p id="content">
+                    Next, I generate a matrix of coefficients, where each row is the same value, so that the elements of
+                    the coefficient and the polynomial matrix can be matched pair-wise. As a recap, the coefficients are
+                    <span class="math inline">\(c_{i} = \left\lbrack 1,\ 2,\ 3 \right\rbrack\)</span>.
+                </p>
+                <p id="content">
+                    Next, we zip and multiply the two matrices together in an element-wise fashion.
+                </p>
+                <p>
+                    <span class="math display">\[\begin{bmatrix}
+                        (1,\ 1) &amp; (1,\ 1) &amp; (0,\ 1) &amp; (0,\ 1) \\
+                        (2,\ 2) &amp; (0,\ 2) &amp; (3,\ 2) &amp; (0,\ 2) \\
+                        (5,\ 3) &amp; (3,\ 3) &amp; (4,\ 3) &amp; (1,\ 3) \\
+                        \end{bmatrix}\]</span>
+                </p>
+                <p>
+                    <span class="math display">\[A = \ \begin{bmatrix}
+                        1 &amp; 1 &amp; 0 &amp; 0 \\
+                        4 &amp; 0 &amp; 6 &amp; 0 \\
+                        15 &amp; 9 &amp; 12 &amp; 3 \\
+                        \end{bmatrix}\]</span>
+                </p>
+                <p id="content">
+                    Finally, we get the final polynomial representation by taking the transpose and summing the product
+                    horizontally, collapsing the matrix into a vector representation of the Chebyshev approximation.
+                </p>
+                <p>
+                    <span class="math display">\[A^{T} = \ \begin{bmatrix}
+                        1 &amp; 4 &amp; 15 \\
+                        1 &amp; 0 &amp; 9 \\
+                        0 &amp; 6 &amp; 12 \\
+                        0 &amp; 0 &amp; 3 \\
+                        \end{bmatrix}\]</span>
+                </p>
+                <p id="content">
+                    <span class="math display">\[result = \ \begin{bmatrix}
+                        20 &amp; 10 &amp; 18 &amp; 3 \\
+                        \end{bmatrix}\]</span>
+                </p>
+                <p id="content">
+                    Both approaches lead to the same result. However, the Accelerate approach has the advantage of
+                    giving
+                    us the freedom of generating optimized code that allows for parallel computing.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid">
+        <h6>
+            <a href="gsoc.html" id="footer" class="target">
+                GSoC &middot;
+            </a>
+            <a href="chematlab.html" id="footer">
+                CheMATLAB &middot;
+            </a>
+            <a href="tableau.html" id="footer">
+                Tableau <br> <br>
+            </a>
+            <a href="Trashy.html" id="footer">
+                Trash-free NYC &middot;
+            </a>
+            <a href="bike.html" id="footer">
+                Bikes in NYC &middot;
+            </a>
+            <a href="reckoner.html" id="footer">
+                Reckoner &middot;
+            </a>
+            <a href="ukind.html" id="footer">
+                Undercover kindness
+            </a>
+        </h6>
+    </div>
+</body>
+
+</html>
