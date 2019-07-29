@@ -34,3 +34,15 @@
     text-decoration: underline;
     color: #0085A1;
   }
+  #gsocheader{
+    background-image: url('../Images/building.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 400px;
+  
+  }
+  #background-opacity{
+    background: rgb(240, 234, 214); /* Fallback for older browsers without RGBA-support */
+    background: rgba(240, 234, 214, 0.8);
+}

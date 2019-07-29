@@ -39,7 +39,7 @@
     </nav>
     <!--Title -->
     <div class="jumbotron">
-        <h1>Google Summer of Code: <br> Chebyshev approximations in Haskell</h1>
+        <h1>Using the Accelerate library to implement Chebyshev Functions</h1>
     </div>
 
     <div class="container-fluid">
@@ -52,15 +52,16 @@
                     polynomial.
                     Having a polynomial representation means that further function manipulations, such as derivation,
                     integration,
-                    and root-finding, becomes relatively trivial computations.
+                    and root-finding, become relatively trivial computations.
                 </p>
                 <p id="content">
                     The first step for this project, as a proof of concept, was to write it in vanilla haskell,
-                    using lists as the primary representation of Chebyshev Polynomials.
+                    using lists as the primary representation of Chebyshev Polynomials. The introduction of the project 
+                    can be found in an earlier post <a href="gsoc-01-intro.html"> here.</a>
                 </p>
                 <p id="content">
                     One of the Haskell libraries that have been developed is Accelerate,
-                    a nested language that allows for parallel array computations on computers with more than one core.
+                    an embedded language that allows for parallel array computations on computers with more than one core.
                 </p>
                 <p id="content">
                     Since the Chebyshev polynomials in this project are, in fact, represented by arrays or lists of
@@ -104,7 +105,8 @@
             <div class="col-sm-8">
                 <p id="content">
                     For example, if I had <span class="math inline">\(c_{i} = \left\lbrack 1,\ 2,\ 3
-                        \right\rbrack,\)</span>
+                        \right\rbrack,\)</span> 
+                        pols = <span class="math inline">\(\lbrack\left\lbrack 1,\ 1 \right\rbrack,\ \left\lbrack 2,\ 0,\ 3 \right\rbrack,\ \left\lbrack 5,\ 3,\ 4,\ 1 \right\rbrack\rbrack\)</span>
                     , the first step would be to zip the coefficients with the polynomials. That is,
                     <span class="math display">\[zipped = \lbrack\left( 1,\ \left\lbrack 1,\ 1 \right\rbrack \right),\
                         \left( 2,\ \left\lbrack 2,\ 0,\ 3 \right\rbrack \right),\ \left( 3,\ \left\lbrack 5,\ 3,\ 4,\ 1
